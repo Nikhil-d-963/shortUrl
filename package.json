@@ -1,0 +1,35 @@
+{
+  "name": "url-shorter",
+  "version": "1.0.0",
+  "description": "this utility provide fecility to make your your shorter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "netlify deploy --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikhil-d-963/url-shorter.git"
+  },
+  "author": "nikhil d",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikhil-d-963/url-shorter/issues"
+  },
+  "homepage": "https://github.com/Nikhil-d-963/url-shorter#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2",
+    "netlify-cli": "^17.33.6",
+    "netlify-lambda": "^2.0.16",
+    "serverless-http": "^3.2.0",
+    "shortid": "^2.2.16",
+    "validator": "^13.12.0"
+  }
+}
