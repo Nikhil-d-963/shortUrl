@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 
 const startServer = async()=>{
-    await mongooseConnect(process.env.MONGOOSE_URI)
+    await mongooseConnect(process.env.MONGOOSE_URI);
     app.listen(PORT, () => {
         console.log(`Server started on port ${PORT}`);
 

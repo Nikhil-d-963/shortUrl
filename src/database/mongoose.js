@@ -1,22 +1,17 @@
 const mongoose = require("mongoose");
 
-const mongooseConnect = async(url)=>{
-    try {
+const mongooseConnect = async (url) => {
+  try {
+    await mongoose.connect(url, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
 
-        await mongoose.connect(url, {
-            serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
-            bufferCommands: false, // Disable mongoose buffering
-        });
-
-        console.log(`Database Connected`);
-
-
-        
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-
+    console.log(`Database Connected`);
+  } catch (error) {
+    console.error("Error connecting to database:", error);
+    throw error;
+  }
+};
 
 module.exports = mongooseConnect;
