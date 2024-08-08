@@ -5,6 +5,8 @@ const express = require('express');
 const path = require('path')
 
 const PORT = process.env.PORT || 3000
+const homeHost = process.env.HOST_URL
+const mongoURI = process.env.MONGOOSE_URI
 
 
 
@@ -19,14 +21,14 @@ app.use(express.static(path.join(__dirname, '/src/views')));
 
 // Define a route
 app.get('/', (req, res) => {
-    res.render('home', {host_url:process.env.HOST_URL}); // Assuming your HTML file is named index.ejs
+    res.render('home', {host_url:homeHost}); // Assuming your HTML file is named index.ejs
 });
 
 
 
 
 const startServer = async()=>{
-    await mongooseConnect(process.env.MONGOOSE_URI);
+    await mongooseConnect(mongoURI);
     app.listen(PORT, () => {
         console.log(`Server started on port ${PORT}`);
 
